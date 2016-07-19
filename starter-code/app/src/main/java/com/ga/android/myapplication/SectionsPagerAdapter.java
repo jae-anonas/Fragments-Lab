@@ -32,6 +32,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 fragment = new ContactInfoFragment();
                 break;
+            case 3:
+                fragment = new GitHubFragment();
+                break;
         }
         return fragment;
 
@@ -53,6 +56,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "ABOUT ME";
             case 2:
                 return "CONTACT";
+            case 3:
+                return "GITHUB";
         }
 
     }
