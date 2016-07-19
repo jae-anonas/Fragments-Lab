@@ -3,6 +3,8 @@ package com.ga.android.myapplication;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +23,13 @@ public class GitHubFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(android.R.layout.simple_list_item_1, container, false);
         textView = (TextView) rootView.findViewById(android.R.id.text1);
-        textView.setText("https://github.com/jae-anonas");
+
+        Spanned text = Html.fromHtml("Click on this link to visit my GitHub <br />" +
+                "<a href='https:github.com/jae-anonas//'>My GitHub</a>");
+
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView.setText(text);
         return rootView;
     }
+
 }
