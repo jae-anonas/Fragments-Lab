@@ -19,10 +19,21 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
+        Fragment fragment;
         switch (position){
             //Complete this
-            default: return new PlaceholderFragment();
+            default:
+            case 0:
+                fragment =  new PlaceholderFragment();
+                break;
+            case 1:
+                fragment = new PersonalInfoFragment();
+                break;
+            case 2:
+                fragment = new ContactInfoFragment();
+                break;
         }
+        return fragment;
 
     }
 
